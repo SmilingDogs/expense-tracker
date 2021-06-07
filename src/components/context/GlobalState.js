@@ -16,11 +16,12 @@ export const GlobalContext = createContext(initialState);
 
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
+
   useEffect(() => {
     localStorage.setItem("transactions", JSON.stringify(state.transactions));
-  }, [state]);
+  }, [state]); //* useEffect записывает новые данные в локалСторедж после каждого изенения стейта
   //* now we need some Actions
-  
+
   const deleteTransaction = (id) => {
     dispatch({ type: "DELETE_TRANSACTION", payload: id });
   };
