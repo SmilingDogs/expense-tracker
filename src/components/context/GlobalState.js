@@ -14,7 +14,7 @@ export const GlobalContext = createContext(initialState);
 
 //* создаем аналог Стора(редакса) - компонент Provider, в который необхоимо обернуть все приложение чтобы все компоненты получили доступ к стейту(initialState)
 
-export const GlobalProvider = ({ children }) => {
+export const GlobalContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 
   useEffect(() => {
