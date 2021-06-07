@@ -12,7 +12,7 @@ const initialState = {
 //* create Context
 export const GlobalContext = createContext(initialState);
 
-//* создаем аналог Стора(редакса) - компонент Provider, в который необхоимо обернуть все приложение чтобы все компоненты получили доступ к стейту(initialState)
+//* создаем аналог Стора(редакса) - компонент GlobalContextProvider, в который необходимо обернуть все приложение чтобы все компоненты получили доступ к (стейт)
 
 export const GlobalContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
@@ -42,3 +42,4 @@ export const GlobalContextProvider = ({ children }) => {
     </GlobalContext.Provider>
   );
 };
+//todo <GlobalContext.Provider> берется из названия context (GlobalContext в данном случае) + .Provider - для создания провайдера контекста.
