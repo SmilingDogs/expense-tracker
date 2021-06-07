@@ -42,4 +42,4 @@ export const GlobalContextProvider = ({ children }) => {
     </GlobalContext.Provider>
   );
 };
-//todo <GlobalContext.Provider> берется из названия context (GlobalContext в данном случае) + .Provider - для создания провайдера контекста.
+//todo <GlobalContext.Provider> берется из названия context (GlobalContext в данном случае) + .Provider - технический компонент
