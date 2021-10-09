@@ -4,13 +4,13 @@ import { GlobalContext } from "./context/GlobalState";
 const AddTransaction = () => {
  const { addTransaction }  = useContext(GlobalContext)
  const [text, setText] = useState('');
- const [amount, setAmount] = useState(1);
+ const [amount, setAmount] = useState(0);
 
  const handleSubmit = (e) => {
     e.preventDefault();
     addTransaction({ id: Math.floor(Math.random() * 100000000), text, amount: +amount});
     setText('');
-    setAmount(1);
+    setAmount(0);
  }
   return (
     <>
@@ -23,11 +23,11 @@ const AddTransaction = () => {
         <div className="form-control">
           <label htmlFor="amount">
             Amount <br />
-            (negative - expense, positive - income)
+            ( - expense, + income)
           </label>
           <input type="number" id="amount" placeholder="Enter amount..." value={amount} onChange={(e) => setAmount(e.target.value)} />
         </div>
-        <button className={amount > 0 ? "btn income" : "btn expense"} type="submit">{ amount > 0 ? "Add income" : "Add expense"}</button>
+        <button className={amount >= 0 ? "btn income" : "btn expense"} type="submit">{ amount >= 0 ? "Add income" : "Add expense"}</button>
       </form>
     </>
   );
