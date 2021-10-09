@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { GlobalContextProvider } from "./components/context/GlobalState";
-import reportWebVitals from "./reportWebVitals";
 
- //todo App обродачивается в GlobalContextProvider  для доступа к стейту
+
+ //todo App оборачивается в GlobalContextProvider для доступа к State
 ReactDOM.render(
   <React.StrictMode>
     <GlobalContextProvider>
@@ -13,5 +13,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
-
-reportWebVitals();

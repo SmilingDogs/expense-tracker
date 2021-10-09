@@ -2,7 +2,7 @@ import React, { createContext, useReducer, useEffect } from "react";
 import { AppReducer } from "./Appreducer";
 
 //* create initialState
-//! 1 способ передать стейт всем - это Редакс,  2 -ой: это Context Provider. Здесь будет 2 способ!
+//todo 1 способ передать стейт всем компонентам - это Редакс,  2-ой: это Context Provider. Здесь будет 2 способ!
 
 const initialState = {
   transactions: localStorage.getItem("transactions")
@@ -19,8 +19,9 @@ export const GlobalContextProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("transactions", JSON.stringify(state.transactions));
-  }, [state]); //* useEffect записывает новые данные в локалСторедж после каждого изенения стейта
-  //* now we need some Actions
+  }, [state]); //* useEffect записывает новые данные в локалСторедж после каждого изменения стейта
+
+  //* Creating Actions
 
   const deleteTransaction = (id) => {
     dispatch({ type: "DELETE_TRANSACTION", payload: id });

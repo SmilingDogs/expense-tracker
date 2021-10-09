@@ -98,7 +98,12 @@ input[type="number"] {
   padding: 10px;
   width: 100%;
 }
-
+.btn.expense {
+  background-color: #c0392b;
+}
+.btn.income {
+  background-color: #2ecc71;
+}
 .btn:focus,
 .delete-btn:focus {
   outline: 0;

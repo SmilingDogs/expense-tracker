@@ -17,8 +17,8 @@ const AddTransaction = () => {
       <h3>Add new transaction</h3>
       <form onSubmit={handleSubmit}>
         <div className="form-control">
-          <label htmlFor="text">Text</label>
-          <input type="text" id="text" placeholder="Enter text..." value={text} onChange={(e) => setText(e.target.value)}/>
+          <label htmlFor="text">Description</label>
+          <input type="text" id="text" placeholder="...details" value={text} onChange={(e) => setText(e.target.value)}/>
         </div>
         <div className="form-control">
           <label htmlFor="amount">
@@ -27,7 +27,7 @@ const AddTransaction = () => {
           </label>
           <input type="number" id="amount" placeholder="Enter amount..." value={amount} onChange={(e) => setAmount(e.target.value)} />
         </div>
-        <button className="btn" type="submit">Add transaction</button>
+        <button className={amount > 0 ? "btn income" : "btn expense"} type="submit">{ amount > 0 ? "Add income" : "Add expense"}</button>
       </form>
     </>
   );
